@@ -11,6 +11,25 @@
  */
 
 //Works for any number of input strings:
-var commonCharacters = function(string1, string2) {
-  
+emoveDupes = function(str) {
+    var chars = {};
+    var output = '';
+    for (var i = 0; i < str.length; i++) {
+        chars[str[i]] = 1;
+    }
+    for (var i in chars) {
+        output += i;
+    }
+    return output;
+}
+
+commonCharacters = function(string1, string2){
+    var output = '';
+    for (var i = 0; i < string1.length; i++) {
+        if (string2.indexOf(string1[i]) > -1) {
+            output += string1[i];
+        }
+    }
+    output = removeDupes(output);
+    return output.split(' ').join('')
 };
