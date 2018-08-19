@@ -14,30 +14,30 @@ string:
 function longestPalindrome (string) {
   // Write your code here, and
   // return your final answer.
-var longest ="";
-var current = "";
-var head =0;
-var tail=1;
-var checkpalindrome = function(h,t){
-  while(string[h]===string[t]&& h > -1 && t <string.length){
-    current= string.slice(h,t+1);
-    h--;
-    t++
+  var longest ="";
+  var current = "";
+  var head =0;
+  var tail=1;
+  var checkpalindrome = function(h,t){
+    while(string[h]===string[t]&& h > -1 && t <string.length){
+      current= string.slice(h,t+1);
+      h--;
+      t++
+    }
+    if (current.length > longest.length){
+      longest= current
+    }
+   return
   }
-  if (current.lengtg > longest.length){
-    longest= current
+  while (tail< string.length){
+    if (string[head]===string[tail+1]){
+      checkpalindrome(head,tail+1);
+    }
+    else if (string[head]=== string[tail]){
+      checkpalindrome(head,tail);
+    }
+    head++
+    tail++
   }
- return
-}
-while (tail< string.length){
-  if (string[head]===string[tail+1]){
-    checkpalindrome(head,tail+1);
-  }
-  else if (string[head]=== string[tail]){
-    checkpalindrome(head,tail);
-  }
-  head++
-  tail++
-}
-return longest
+  return longest
 };
