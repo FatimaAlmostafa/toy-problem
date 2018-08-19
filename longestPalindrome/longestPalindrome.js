@@ -24,7 +24,7 @@ function longestPalindrome (string) {
       h--;
       t++
     }
-    if (current.lengtg > longest.length){
+    if (current.length > longest.length){
       longest= current
     }
    return
@@ -40,4 +40,4 @@ function longestPalindrome (string) {
     tail++
   }
   return longest
-  };
+};
