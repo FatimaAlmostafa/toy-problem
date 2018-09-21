@@ -1,5 +1,5 @@
 /*
-Given an array of arrays, return all elements in a single array. 
+Given an array of arrays, return all elements in a single array.
 You must use recursion.
 
 Hint: Use Array.isArray(elem) to see if something is an array.
@@ -16,8 +16,21 @@ arrays:
 */
 
 function flatten (arrays) {
-	// write your code here 
+
+    var result = [];
+    //iterate is a helper function that recursively calls itself if the current element is an array
+    function iterate(arr) {
+      arr.forEach((el) => {
+        if (Array.isArray(el)) {
+          iterate(el);
+        } else {
+          result.push(el);
+        }
+      })
+    }
+
+    iterate(arrays);
+    return result;
+
+
 }
-
-
-
