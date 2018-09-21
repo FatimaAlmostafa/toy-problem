@@ -22,6 +22,20 @@
  * Extra credit: Make the method work for arrays that contain objects and/or arrays as elements.
 */
 
-Array.prototype.isSubsetOf = function (arr) {
-	// your code here
-}
+Array.prototype.isSubsetOf = function(array2) {
+  var obj={}
+   for (var i=0; i<array2.length; i++){
+
+     if (!obj[array2[i]]){
+       obj[array2[i]]=1
+     }
+     else obj[array2[i]] += 1
+   }
+  for (var j = 0; j <this.length; j++) {
+ 	if (obj[this[j]]===undefined) {
+ 		return false;
+ 	}
+  }
+
+  return true;
+};

@@ -1,5 +1,5 @@
 /*
-Given an arbitrary input string, return the first non-repeating character. 
+Given an arbitrary input string, return the first non-repeating character.
 For strings with all repeats, return 'sorry'.
 
 Examples
@@ -21,5 +21,20 @@ string:
 */
 
 function firstNonRepeatedCharacter (string) {
-   // write your code here
+  var obj={}
+for(var i=0; i < string.length; i++){
+  if(obj[string[i]]===undefined){
+    obj[string[i]]=1
+    console.log(obj)
+  }else{
+  ++obj[string[i]]
+  }
+}
+for(var key in obj){
+  if(obj[key]===1){
+    return key
+  }
+}
+
+return "sorry"
 }
