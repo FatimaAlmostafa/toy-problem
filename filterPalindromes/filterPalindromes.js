@@ -10,6 +10,14 @@
 
 
 function filterPalindromes (words) {
-  // Write your code here, and
-  // return your final answer.
+  let palindromesArr = [];
+  for ( let i = 0; i < words.length; i++ ) {
+    let flip = words[i].split('').reverse().join('');
+    flip = flip.toLowerCase().split(' ').join('');
+    console.log(flip);
+    if ( flip === words[i].toLowerCase().split(' ').join('') ) {
+      palindromesArr.push(words[i]);
+    }
+  }
+  return palindromesArr;
 }
